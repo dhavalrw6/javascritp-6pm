@@ -1,0 +1,47 @@
+<form action="" method="post" >
+    <input type="text" id="username" placeholder="username"> <br> <br>
+    <input type="text" id="password" placeholder="password"> <br> <br>
+    <input type="submit" value="Login" id="submit">
+</form>
+
+<form action="" method="post" id="form">
+    <input type="text" id="oldPassword" placeholder="old Password"> <br> <br>
+    <input type="text" id="changePassword" placeholder="change Password"> <br> <br>
+    <input type="submit" value="Login" >
+</form>
+
+
+<div>
+    <h2 id="user"> </h2>
+    <h2 id="pass"> </h2>
+</div>
+
+<script>
+    let password = '';
+    document.getElementById('submit').addEventListener('click',function(e){
+        e.preventDefault();
+        let username = document.querySelector('#username').value;
+        password = document.querySelector('#password').value;
+
+        document.querySelector('#user').innerHTML = "user name:- " + username;
+        document.querySelector('#pass').innerHTML = "password:- " + password;
+    })
+
+     document.getElementById('form').addEventListener('submit',function(e){
+        e.preventDefault();
+
+        let oldPassword = document.querySelector('#oldPassword').value;
+        let changePassword = document.querySelector('#changePassword').value;
+        if(password == oldPassword)
+        {
+            console.log("password march");
+            password = changePassword;
+            document.querySelector('#pass').innerHTML = "password:- " + password;
+        }
+        else
+        {
+            alert("Wrong password..");
+        }
+
+     })
+</script>

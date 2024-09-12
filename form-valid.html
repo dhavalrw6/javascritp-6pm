@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <form action="" id="form">
+        <input type="text" id="name" placeholder="Ex:. Jone">
+        <span id="nameErr" style="color: red; display: none;">*Pls Enter Name</span> <br> <br>
+        <input type="radio" id="male" name="gender" value="male" > male
+        <input type="radio" id="female" name="gender" value="female"> female
+        <span id="genderErr" style="color: red; display: none;">*Pls select gender</span> <br> <br>
+        <input type="submit">
+    </form>
+
+    <script>
+        document.getElementById('form').addEventListener('submit',function(e){
+            e.preventDefault();
+            let name = document.getElementById('name').value;
+            let male = document.querySelector('#male').checked;
+            let female = document.querySelector('#female').checked;
+            console.log(male);
+            if(!name)
+            {
+                document.getElementById('nameErr').style.display = "inline-block";
+            }
+            else
+            {
+                document.getElementById('nameErr').style.display = "none";
+            }
+
+            if(male || female)
+            {
+                document.getElementById('genderErr').style.display = "none";
+            }
+            else
+            {
+                document.getElementById('genderErr').style.display = "inline-block";
+            }   
+
+        })
+    </script>
+</body>
+</html>

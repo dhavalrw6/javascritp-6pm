@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Form</title>
+</head>
+<body>
+    <h2>Simple Form</h2>
+    <form action="" method="post" id="form">
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name"><br><br>
+
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email"><br><br>
+
+        <label for="password">Password:</label><br>
+        <input type="password" id="password" name="password"><br><br>
+
+        <input type="submit" value="Submit">
+    </form>
+    <div>
+        <table id="data" border="1">
+
+        </table>
+    </div>
+    <script>
+    
+        let table = '';
+
+        document.getElementById('form').addEventListener('submit',(e)=>{
+            e.preventDefault();
+
+            let name = document.getElementById('name').value;
+            let email = document.getElementById('email').value;
+            let password = document.getElementById('password').value;
+            table += ` <tr> <td> ${name} </td> <td> ${email} </td> <td> ${password} </td> </tr> `
+
+            document.getElementById('data').innerHTML = table;
+             document.getElementById('name').value = '';
+            document.getElementById('email').value = '';
+            document.getElementById('password').value = '';
+            document.getElementById('name').focus();
+        })
+
+    </script>
+</body>
+</html>
+

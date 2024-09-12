@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form name="cal">
+        <input type="text" name="res" id="res" > <br> <br>
+
+        <input type="button" value="1" onclick="cal.res.value += '1' " >
+        <input type="button" value="2" onclick="cal.res.value += '2' " >
+        <input type="button" value="3" onclick="cal.res.value += '3' " >
+        <input type="button" value="+" onclick="cal.res.value += '+' " > <br>
+        <input type="button" value="4" onclick="cal.res.value += '4' " >
+        <input type="button" value="5" onclick="cal.res.value += '5' " >
+        <input type="button" value="6" onclick="cal.res.value += '6' " >
+        <input type="button" value="-" onclick="cal.res.value += '-' " > <br>
+        <input type="button" value="7" onclick="cal.res.value += '7' " >
+        <input type="button" value="8" onclick="cal.res.value += '8' " >
+        <input type="button" value="9" onclick="cal.res.value += '9' " >
+        <input type="button" value="*" onclick="cal.res.value += '*' " > <br>
+        <input type="button" value="0" onclick="cal.res.value += '0' " >
+        <input type="button" value="c" onclick="cal.res.value = '' " >
+        <input type="button" value="=" onclick="cal.res.value = eval(cal.res.value) " >
+         <!-- <a href="javascript:void()" onclick="cal.res.value = eval(cal.res.value)" >=</a> -->
+        <input type="button" value="/" onclick="cal.res.value += '/' " >
+
+    </form>
+    <script>
+       const cal = (e) =>{
+        console.log(e);
+       }
+    </script>
+</body>
+</html>

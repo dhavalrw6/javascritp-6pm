@@ -1,0 +1,49 @@
+
+<style>
+    .bg{
+        height: 200px;
+        margin-top: 20%;
+        background-color: #d2eeb3;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 24px;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        font-weight: bold;
+    }
+    /* .quotes{
+        font-size: 24px;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        font-weight: bold;
+    } */
+</style>
+
+<div class="bg">
+    "<span class="quotes"></span>"
+</div>
+
+<script>
+    let i=0;
+    let obj = {
+        0 : "The only thing we have to fear is fear itself.",
+        1 : "Courage is being scared to death, but saddling up anyway.",
+        2 : "If you cannot do great things, do small things in a great way.",
+        3 : "Well done is better than well said.",
+        4 : "The way to get started is to quit talking and begin doing.",
+        5 : "Keep calm and carry on."
+    }
+
+    let quotes = document.querySelector(".quotes");
+
+    let changeQuotes = () =>{
+        quotes.innerHTML = obj[i];
+        i++;
+        if(i==5){
+            i=0;
+        }
+    }
+
+    setInterval(changeQuotes,2000);
+    changeQuotes();
+
+</script>

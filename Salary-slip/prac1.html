@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Salary Slip</h2>
+    <form action="">
+        <input type="text" id="name" placeholder="Enter Name:- "> <br/><br/>
+        <input type="text" id="B_Salary" placeholder="Enter Basic Salary:- ">
+        <button type="submit" id="btn">Add Data</button>
+    </form>
+
+    <div>
+        <p id="Ename"></p>
+        <p id="EB_Salary"></p>
+        <p id="HRA"></p>
+        <p id="DA"></p>
+        <p id="TA"></p>
+        <p id="gross"></p>
+    </div>
+
+    <script>
+        document.getElementById('btn').addEventListener('click',function salarySlip(e){
+            e.preventDefault();
+
+            let name = document.getElementById('name').value;
+            let B_Salary = parseInt(document.getElementById('B_Salary').value);
+
+            // HRA 15%, DA 10%, TA 8%
+
+            let HRA = B_Salary * 15/100;
+            let DA = B_Salary * 10/100;
+            let TA = B_Salary * 8/100;
+
+            let gross = B_Salary+HRA+DA+TA;
+
+            // console.log(name);
+            // console.log(B_Salary);
+            // console.log(HRA);
+            // console.log(DA);
+            // console.log(TA);
+            // console.log(gross);
+
+            document.getElementById('Ename').innerHTML = "Employee Name:- " + name;
+            document.getElementById('EB_Salary').innerHTML = "Employee Basic Salary:- " + B_Salary;
+            document.getElementById('HRA').innerHTML = "HRA:- " + HRA;
+            document.getElementById('DA').innerHTML = "DA:- " + DA;
+            document.getElementById('TA').innerHTML = "TA:- " + TA;
+            document.getElementById('gross').innerHTML = "Gross:- " + gross;
+
+            document.getElementById('name').value = '';
+            document.getElementById('B_Salary').value = '';
+
+            document.getElementById('name').focus();
+
+        })
+    </script>
+
+
+
+</body>
+</html>

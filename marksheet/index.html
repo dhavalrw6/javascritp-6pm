@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <form action="" id="form">
+        <input type="text" id="rollno" placeholder="Enter Roll No"> <br> <br>
+        <input type="text" id="name" placeholder="Enter name"> <br> <br>
+        <input type="text" id="sub1" placeholder="Enter sub1"> <br> <br>
+        <input type="text" id="sub2" placeholder="Enter sub2"> <br> <br>
+        <input type="text" id="sub3" placeholder="Enter sub3"> <br> <br>
+        <input type="submit" value="result"> <br> <br>
+    </form>
+
+    <div id="result">
+        <h2 id="s_roll"></h2>
+        <h2 id="s_name"></h2>
+        <h2 id="s_sub1"></h2>
+        <h2 id="s_sub2"></h2>
+        <h2 id="s_sub3"></h2>
+        <h2 id="total"></h2>
+        <h2 id="avg"></h2>
+        <h2 id="grade"></h2>
+    </div>
+
+    <script>
+        document.getElementById('form').addEventListener('submit',function(e){
+            e.preventDefault();
+
+            let rollno = document.getElementById('rollno').value;
+            let name = document.getElementById('name').value;
+            let sub1 = parseInt(document.getElementById('sub1').value);
+            let sub2 = parseInt(document.getElementById('sub2').value);
+            let sub3 = parseInt(document.getElementById('sub3').value);
+            
+
+            let total = sub1 + sub2 + sub3;
+
+            let avg = total / 3;
+
+            document.getElementById('s_roll').innerHTML = "Roll No:- " + rollno;
+            document.getElementById('s_name').innerHTML = "Name:- " + name;
+            document.getElementById('s_sub1').innerHTML = "sub1:- " + sub1;
+            document.getElementById('s_sub2').innerHTML = "sub2:- " + sub2;
+            document.getElementById('s_sub3').innerHTML = "sub3:- " + sub3;
+            document.getElementById('total').innerHTML = "total:- " + total;
+            document.getElementById('avg').innerHTML = "avg:- " + avg;
+
+            if(sub1>=35 && sub2>=35 && sub3>=35)
+            {
+                console.log("Pass");
+
+                if(avg>=80){
+                    document.getElementById('grade').innerHTML = "Grade A";
+                }
+                else if(avg >= 60){
+                    document.getElementById('grade').innerHTML = "Grade B";
+                }
+                else if(avg >=50){
+                    document.getElementById('grade').innerHTML = "Grade C";
+                }
+                else
+                {
+                    document.getElementById('grade').innerHTML = "Pass Class";
+                }
+            }
+            else
+            {
+                console.log("Fail");
+            }
+
+        })
+    </script>
+</body>
+</html>

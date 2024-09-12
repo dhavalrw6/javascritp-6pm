@@ -1,0 +1,54 @@
+<script>
+    // function string(name)
+    // {
+    //     console.log(`Hello ${name}`);
+    // } 
+    // string("Dhaval");
+
+    let a = parseInt(prompt("Enter value of a:"));
+    let b = parseInt(prompt("Enter value of b:"));
+
+    function sum(a,b)
+    {
+        console.log("a + b = ",a+b);
+    }
+
+    function sub(a,b)
+    {
+        console.log("a - b = ",a-b);
+    }
+
+    function mul(a,b)
+    {
+        console.log("a * b = ",a*b);
+    }
+
+    function div(a,b)
+    {
+        console.log("a / b = ",a/b);
+    }
+
+    let ch = parseInt(prompt("Enter your choice:- "));
+
+    switch (ch) {
+        case 1:
+            sum(a,b);
+            break;
+
+        case 2:
+            sub(a,b);
+            break;
+    
+        case 3:
+            div(a,b);
+            break;
+        
+        case 4:
+            mul(a,b);
+            break;
+        default:
+            alert("Wrong Choice...");
+            break;
+    }
+
+</script>

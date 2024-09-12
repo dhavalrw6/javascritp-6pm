@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .error{
+            color: red;
+            margin-left: 20px;
+        }
+    </style>
+</head>
+<body>
+    
+    <form method="post" id="form">
+        <table align="center">
+            <caption>
+                <h2>Add Employee Data..</h2>
+            </caption>
+            <tr>
+                <td>name</td>
+                <td>
+                    <input type="text" name="name" id="name">
+                    <span id="name-error" class="error"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td>
+                    <input type="text" name="email" id="email">
+                    <span id="email-error" class="error"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>password</td>
+                <td>
+                    <input type="text" name="password" id="password">
+                    <span id="password-error" class="error"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>gender</td>
+                <td>
+                    <input type="radio" name="gender" value="male" id="gender"> Male
+                    <input type="radio" name="gender" value="female" id="gender"> female
+                    <span id="gender-error" class="error"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>City</td>
+                <td>
+                    <select name="city" id="city">
+                        <option value="" selected disabled>--select-city--</option>
+                        <option value="surat">surat</option>
+                        <option value="vapi">vapi</option>
+                    </select>
+                    <span id="city-error" class="error"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>Hobby</td>
+                <td>
+                    <input type="checkbox" name="hobby" value="music"  id="hobby">music
+                    <input type="checkbox" name="hobby" value="reading" id="hobby">reading
+                    <input type="checkbox" name="hobby" value="dancing" id="hobby">dancing
+                    <span id="hobby-error" class="error"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>Address</td>
+                <td>
+                    <textarea rows="4" cols="25" name="address" id="address"></textarea>
+                    <span id="address-error" class="error"></span>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input type="submit" ></td>
+            </tr>
+        </table>
+    </form>
+
+    <script src="script.js"></script>
+</body>
+</html>

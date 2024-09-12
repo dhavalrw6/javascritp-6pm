@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <form id="form">
+        <input type="text" id="fname" placeholder="Enter frist Name">
+        <span style="color: red; display: none;" id="fnameErr">*Pls Enter frist name</span>
+        <br><br>
+        <input type="text" id="lname" placeholder="Enter Last Name"> 
+        <span style="color: red; display: none;" id="lnameErr">*Pls Enter Last name</span>
+        <br><br>
+        <input type="submit" >
+    </form>
+
+    <script>
+        document.getElementById('form').addEventListener('submit',function(e){
+            e.preventDefault();
+            let fname = document.getElementById('fname').value;
+            let lname = document.getElementById('lname').value;
+            
+             if(!fname)
+             {
+                document.getElementById('fnameErr').style.display = "inline-block";
+            }
+            else
+            {
+                document.getElementById('fnameErr').style.display = "none";
+            }
+
+             if(!lname)
+             {
+                document.getElementById('lnameErr').style.display = "inline-block";
+            }
+            else
+            {
+                document.getElementById('lnameErr').style.display = "none";
+            }
+
+        })
+    </script>
+</body>
+</html>
