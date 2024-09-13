@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .name,.email,.password{
+            margin-bottom: 10px;
+        }
+        .error{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <form class="form">
+        <div class="name">
+            <label for="name">Name</label>
+            <input type="text" name="name" id="name">
+        </div>
+        <div class="email">
+            <label for="email">email</label> 
+            <input type="text" name="email" id="email">
+        </div>
+        <div class="password">
+            <label for="password">password</label>
+            <input type="text" name="password" id="password">
+        </div>
+        <div>
+            
+            <input type="submit" value="Submit" >
+        </div>
+    </form>
+    <script src="./jquery-3.7.1.min.js"></script>
+    <script src="./jquery.validate.min.js"></script>
+    <script>
+        $('.form').validate({
+            rules : {
+                name : "required",
+                email: {
+                    required: true,
+                    email: true
+                },
+                password : "required"
+            },
+            messages : {
+                name : "Name is required.",
+                email : {
+                required: "We need your email address to contact you",
+                email: "Your email address must be in the format of name@domain.com"
+                },
+                password : "Password is required."
+            }            
+        });
+    </script>
+</body>
+</html>
