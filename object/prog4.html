@@ -1,0 +1,31 @@
+<script>
+    class Company{
+        constructor(){
+            this.compName = "L&T";
+        }
+    }
+
+    class Employee extends Company{
+        constructor(){
+            super();
+            this.name;
+            this.role;
+        }
+
+        setRecode(name,role){
+            this.name = name;
+            this.role = role;
+        }
+
+        getRecode(){
+            document.write(this.compName +" "+this.name +" "+this.role+"<br/>");           
+        }   
+    }
+
+
+    let emp = new Employee();
+    emp.setRecode("Raj","Manager");
+    emp.getRecode();
+
+    
+</script>

@@ -1,0 +1,22 @@
+<script>
+
+    class A{
+        getData(){
+            document.write("Hello From A1.<br/>");            
+        }
+       
+    }
+
+    class B{
+         getData(){
+            document.write("Hello From A2.");            
+        }
+    }
+
+     let b = [new A(), new B()];
+
+    b.forEach((msg)=>{
+        msg.getData();
+    })
+
+</script>

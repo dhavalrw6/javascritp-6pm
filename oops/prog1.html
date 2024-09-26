@@ -1,0 +1,44 @@
+<script>
+    let obj = {
+        name : "John",
+        age : 21,
+        printData(){
+            console.log(this.age);
+        }
+    }
+
+    // let name1 = 'kunal'
+
+    let obj1 = Object();
+    obj1.name = "Pratham";
+    obj1.age = 24
+    // console.log(obj1.age);
+    
+
+    class student {
+        constructor(name1){
+            this.name1 = name1;
+        }
+    }
+
+    class data extends student{
+        constructor(name1,age){
+            super(name1);
+            this.age = age;
+        }
+
+        showData(){
+            console.log("name: ",this.name1);
+            console.log("age: ",this.age);
+        }
+    };
+
+    let stud = new data("Dhaval",34);
+    // let stud1 = new data("Karan",24);
+
+    stud.showData();
+
+    
+
+
+</script>

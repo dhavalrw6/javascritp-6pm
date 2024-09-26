@@ -1,0 +1,28 @@
+<style>
+    body{
+        margin-left: 20px;
+    }
+</style>
+
+<script>
+    
+    class Time extends Date{
+        constructor(){
+            super();
+        }
+
+       static getData(){
+            return "Hello Js User";
+        }
+
+    }
+
+    let d = new Time();
+
+    document.write(d.getDate()+"<br/>")
+    document.write(d.getMonth()+1 +"<br/>")
+    document.write(d.getFullYear() +"<br/>")
+    document.write(Time.getData() +"<br/>")
+
+    
+</script>

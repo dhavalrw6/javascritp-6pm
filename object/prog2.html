@@ -1,0 +1,39 @@
+<script>
+
+    let arr = [1,2,3,4];
+
+    console.log(arr);
+    
+    class compName{
+        constructor(comp){
+            this.compName = comp
+        }
+
+        printMsg(){
+            console.log("Hello Js Dev..");
+        }
+
+    }
+
+    class employee extends compName{
+        constructor(name,salary,comp){
+            super(comp);
+            this.name = name
+            this.salary = salary          
+        }
+
+        showData(){
+            console.log(`Emp name:- ${this.name} salary:- ${this.salary} compName:- ${this.compName}`);            
+        }
+
+    }
+
+    let emp =new employee("Pratham",23000,"Red & white");
+    let emp1 =new employee("Ramesh",67000,"red & white");
+    console.log(emp);
+    emp.showData();
+    emp1.showData();
+    emp.printMsg();
+    
+
+</script>

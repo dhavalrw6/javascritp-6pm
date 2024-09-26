@@ -1,0 +1,34 @@
+<script>
+    class Company{
+        constructor(){
+            this.compName = "L&T";
+        }
+    }
+
+    class Employee extends Company{
+        constructor(){
+            super();
+            this.name = "Raj";
+            this.role = "HR";
+        }
+
+        viewRecode(){
+            document.write(this.compName +" "+this.name +" "+this.role+"<br/>");           
+        }   
+    }
+
+    class Branch extends Employee{
+           branch="surat";
+
+        viewBranch(){
+            document.write(this.branch);           
+        }
+
+    }
+
+    let emp = new Branch();
+    emp.viewRecode();
+    emp.viewBranch();
+    console.log(emp.branch);
+    
+</script>

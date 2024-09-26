@@ -1,0 +1,25 @@
+<script>
+
+    class UserLogin{
+        constructor(name){
+             name;
+            this.password = ''
+        }
+        
+        setPassword(password){
+            this.password = password
+        }
+
+        login(inputPassword){
+            return inputPassword == this.password;
+        }
+
+    }
+
+    let user = new UserLogin("Raj");
+    user.setPassword(123);
+    document.write(user.login(123));
+    
+
+
+</script>

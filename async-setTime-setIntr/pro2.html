@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 100px;
+            height: 100px;
+            background-color: #5fe35f;
+            border: 2px solid black;
+            margin: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="main"></div>
+
+    <script>
+        let main = document.querySelector('.main');
+            main.style.display = "flex";
+
+        let count=0;
+            
+        let handleMargin = ()=>{
+            count++;
+            let box = document.createElement('div');
+            box.classList = "box";
+            let span = document.createElement('span');
+            span.innerHTML = count;
+            box.append(span)
+            main.append(box);
+            if(count == 10){
+                clearInterval(id);
+            }
+        }
+
+       let id = setInterval(handleMargin,500);
+
+    </script>
+</body>
+</html>

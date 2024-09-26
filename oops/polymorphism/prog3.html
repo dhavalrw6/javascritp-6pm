@@ -1,0 +1,38 @@
+<script>
+    
+    class Car{
+        constructor(brand,model){
+            this.brand = brand;
+            this.model = model;
+            this.engine = false;
+        }
+
+        #startEngine(){
+            if(!this.engine){
+                this.engine = true;
+                document.write(`${this.brand} ${this.model} is start.<br/>`)
+            }else{
+                document.write(`${this.brand} ${this.model} is already start.<br/>`)
+            }
+        }
+
+        stopEngine(){
+            if(this.engine){
+                this.engine = false;
+                document.write(`${this.brand} ${this.model} engine stopped.<br/>`)
+            }else{
+                document.write(`${this.brand} ${this.model} engine already off.<br/>`)
+            }
+        }
+
+    }
+
+    let myCar =new Car('Maruti','Swift');
+
+    myCar.#startEngine();
+    myCar.stopEngine();
+    // myCar.startEngine();
+    // myCar.stopEngine();
+
+
+</script>

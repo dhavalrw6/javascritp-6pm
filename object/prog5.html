@@ -1,0 +1,30 @@
+<script>
+    class emp{
+        constructor(){
+            this.name;
+            this.salary;
+        }
+
+        setName(name){
+            this.name = name;
+        }
+
+        setSalary(salary){
+            this.salary = salary;
+        }
+
+        getName(){
+            return this.name;
+        }
+
+        getSalary(){
+            return this.salary;
+        }
+
+    }
+
+    let e = new emp();
+    e.setName("Raj");
+    e.setSalary(70000000);
+    document.write(e.getName()+"  "+ e.getSalary());
+</script>

@@ -1,0 +1,80 @@
+<script>
+
+    /* Create an Object Using Object Literals. */
+
+    let user = {
+        name : "Dhaval",
+        age : 21,
+    }
+
+    /* Create an Object Using new Keyword (Object Instance) */
+
+    let emp= new Object();
+
+    emp.id = 21;
+    emp.name = "karan";
+    emp.salary = 20000;
+
+    for(let key in emp)
+    {
+        document.write(emp[key]+" ")
+    }
+
+    /* Create an Object Using Object Constructer */
+    
+    function employee(id,name,salary){
+        this.id = id;
+        this.name = name;
+        this.salary = salary
+
+        this.UpdateSalary = UpdateSalary;
+        function UpdateSalary(newSalary){
+            this.salary = newSalary;
+        }
+
+    }
+
+    let emp1 = new employee(24,"Pratham",45000);
+
+    console.log(emp1);
+    
+    
+    emp1.UpdateSalary(120000);
+
+    console.log(emp1);
+
+
+    let obj1 = {
+        a:1,
+        b:2,
+        c:3,
+        d:4
+    }
+
+    let obj2 = {
+        a:5,
+        f:6
+    }
+
+    // let obj3 = Object.assign(obj1,obj2);
+
+    let obj3 = {...obj1,...obj2}
+
+    console.log(obj3);
+    
+
+    let newObj = Object.create(obj1);
+
+    for(let key in newObj){
+        console.log(newObj[key]);
+        
+    }
+
+    console.log(Object.keys(obj1));
+    
+    
+
+    
+    
+
+</script>
