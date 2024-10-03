@@ -1,7 +1,14 @@
 let users = JSON.parse(localStorage.getItem('users')) || [];
+let cart = JSON.parse(localStorage.getItem('cart')) || [];
 let form = document.querySelector('form');
 let userTbl = document.querySelector('.userTbl tbody');
 let editIndex = -1;
+let btnUser = document.querySelector('.btn-user');
+
+document.getElementById('count').textContent = cart.length || 0;
+
+btnUser.textContent = "Add New User";
+
 
 form.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -21,6 +28,7 @@ form.addEventListener('submit', (e) => {
     else {
         users[editIndex] = user
         editIndex = -1;
+        btnUser.textContent = "Add New User";
     }
 
     document.getElementById('username').value = ''
@@ -45,6 +53,7 @@ let renderUserTable = () => {
             <td>
                 <button class="btn btn-warning" onclick="editUser(${index})">Edit</button>
                 <button class="btn btn-danger" onclick="deleteUser(${index})">Delete</button>
+                <button class="btn btn-primary" onclick="AddToCart(${index})">Add To Cart</button>
             </td>
         `
         userTbl.appendChild(row);
@@ -65,7 +74,16 @@ let editUser = (index) => {
     document.getElementById('email').value = email;
     document.getElementById('password').value = password;
     editIndex = index;
-
+    btnUser.textContent = "Update User"
 }
+
+let AddToCart = (index) => {
+    let cartData = users[index];
+    cart.push(cartData);
+    document.getElementById('count').textContent = cart.length || 0;
+    //showCartData();
+    localStorage.setItem('cart', JSON.stringify(cart));
+}
+
 
 renderUserTable();
