@@ -1,3 +1,6 @@
+<div>
+        <a href="./index.html" class="view">Add Record</a>
+    </div>
 <ol>
 
 </ol>
@@ -12,17 +15,10 @@
             let li = document.createElement('li');
             li.innerHTML = `
                 <span>${item.name}</span>
-                <span id={${name}}>1</span>
+                <span>${item.quantity}</span>
                 <button onclick="removeData(${index})">Remove</button>
             `
             show.appendChild(li);
-        })
-    }
-
-    let countIncrement=()=>{
-        let count;
-        cart.filter((item,index)=>{
-            
         })
     }
 

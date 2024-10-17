@@ -73,8 +73,22 @@ function editData(index) {
 
 let cartData = (index) => {
     let data = employees[index];
-    data.index =  index;
-    cart.push(data);
+
+    let newIndex = cart.findIndex((item) => {
+        return item.name === data.name
+    })
+    console.log("newIndex" + newIndex);
+
+    if (newIndex == -1) {
+        data.quantity = 1;
+        cart.push(data);
+    }
+    else {
+        // data.quantity += 1;
+        // cart[newIndex] = data;
+        cart[newIndex].quantity += 1;
+    }
+
     localStorage.setItem('cartData', JSON.stringify(cart));
 }
 
