@@ -1,7 +1,8 @@
 let empForm = document.getElementById('empForm');
 let empTbl = document.querySelector('#empTbl tbody');
 let employees = JSON.parse(localStorage.getItem('userData')) || [];
-
+let cart = JSON.parse(localStorage.getItem('cartData')) || [];
+let editIndex = -1;
 
 empForm.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -44,6 +45,7 @@ let renderEmpData = () => {
         <td>
             <button onclick="deleteData(${index})">Delete</button>
             <button onclick="editData(${index})">Edit</button>
+            <button onclick="cartData(${index})">AddToCart</button>
         </td>
        `
         empTbl.appendChild(empRow);
@@ -67,6 +69,13 @@ function editData(index) {
     document.getElementById('email').value = emp.email;
     document.getElementById('dpt').value = emp.dpt;
     editIndex = index;
+}
+
+let cartData = (index) => {
+    let data = employees[index];
+    data.index =  index;
+    cart.push(data);
+    localStorage.setItem('cartData', JSON.stringify(cart));
 }
 
 renderEmpData();

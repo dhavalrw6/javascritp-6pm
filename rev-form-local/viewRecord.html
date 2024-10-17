@@ -1,0 +1,38 @@
+<ol>
+
+</ol>
+
+<script>
+    let show = document.querySelector('ol');
+    let cart = JSON.parse(localStorage.getItem('cartData')) || [];
+
+    let renderList=()=>{
+        show.innerHTML = '';
+        cart.map((item,index)=>{
+            let li = document.createElement('li');
+            li.innerHTML = `
+                <span>${item.name}</span>
+                <span id={${name}}>1</span>
+                <button onclick="removeData(${index})">Remove</button>
+            `
+            show.appendChild(li);
+        })
+    }
+
+    let countIncrement=()=>{
+        let count;
+        cart.filter((item,index)=>{
+            
+        })
+    }
+
+    renderList();
+
+    let removeData=(index)=>{
+        cart.splice(index,1);
+        localStorage.setItem('cartData',JSON.stringify(cart));
+        renderList();
+    }
+
+
+</script>
