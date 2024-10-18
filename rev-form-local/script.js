@@ -81,6 +81,7 @@ let cartData = (index) => {
 
     if (newIndex == -1) {
         data.quantity = 1;
+        data.price = 10
         cart.push(data);
     }
     else {
